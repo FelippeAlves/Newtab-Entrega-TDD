@@ -71,7 +71,7 @@ function fecharModal() {
 // Função para validar campo de valor para pagamento do usuário
 function valorInput(event) {
 
-    valorDinheiro = (event.target.value).replace(/[^0-9]+/gi,'')
+    valorDinheiro = event.replace(/[^0-9]+/gi,'')
     
     if (valorDinheiro.length <= 2) {
         valorDinheiro = "0." + ("00" + valorDinheiro).slice(-2)
@@ -134,10 +134,12 @@ function render() {
 }
 
 
-fetch(`https://cors.eu.org/${('https://www.mocky.io/v2/5d531c4f2e0000620081ddce')}`).
+/* fetch(`https://cors.eu.org/${('https://www.mocky.io/v2/5d531c4f2e0000620081ddce')}`).
 then(jsonRaw => jsonRaw.json()).
 then((resposta) => { 
     infos = resposta 
     render();
     clear()
-})
+}) */
+
+module.exports = valorInput();
